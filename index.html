@@ -21,6 +21,7 @@
 
       </div>
     </div>
+    <hr />
     <div class="text-content" id="why">
       <h2>FAQs</h2>
       <h3>why does matt owe crystal favours?</h3>
@@ -54,10 +55,20 @@
         how serious is this?
       </h3>
       <p>
-        <b>very serious.</b> matt hates breaking promises.
+        <b>very serious.</b> matt hates breaking promises
       </p>
-      <h3>where's the code?</h3>
-      <p>source code at <a href="https://github.com/mattxwang/hmfdmoc" target="_blank" rel="noopener noreferrer">this repo</a></p>
+      <h3>
+        where's the code?
+      </h3>
+      <p>
+        source code at <a href="https://github.com/mattxwang/hmfdmoc" target="_blank" rel="noopener noreferrer">this repo</a>
+      </p>
+      <h3>
+        did you really buy a domain for this?
+      </h3>
+      <p>
+        yes
+      </p>
     </div>
   </body>
   <script>
@@ -66,18 +77,15 @@
     )
       .then(response => {
         response.json().then(json => {
-          console.log(json);
           const date = Date(json.commit.commit.author.date);
-          console.log(date)
           if (date) {
             const dateStr = date.toString()
             document.getElementById('date').innerHTML = dateStr
           }
-
         });
       })
       .catch(error => {
-        console.log(error);
+        console.error(error);
       });
   </script>
 </html>

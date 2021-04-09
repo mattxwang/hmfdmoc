@@ -12,6 +12,8 @@ html, body, #app-container {
 html {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   color: #181818;
+  background-color: #F5F6F6;
+  font-size: 18px;
 }
 
 .content-container {
@@ -22,6 +24,13 @@ html {
   display: flex;
   align-items: center;
   text-align: center;
+  padding: 0 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  #app-container {
+    font-size: 1.5rem;
+  }
 }
 
 #date {
@@ -31,4 +40,5 @@ html {
 .text-content {
   margin: auto;
   max-width: 50rem;
+  padding: 1rem;
 }
