@@ -77,7 +77,7 @@
     )
       .then(response => {
         response.json().then(json => {
-          const date = Date(json.commit.commit.author.date);
+          const date = new Date(json.commit.commit.author.date);
           if (date) {
             const dateStr = date.toString()
             document.getElementById('date').innerHTML = dateStr
