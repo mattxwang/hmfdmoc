@@ -14,8 +14,32 @@
     <div id="app-container">
       <div class="content-container">
         <h1>matt currently owes crystal <code>2<sup>2</sup> = 4</code> favours</h1>
+        <p>
+          last updated: <span id="date">some time ago</span>
+        </p>
+
+        <p>source code at <a href="https://github.com/mattxwang/hmfdmoc" target="_blank" rel="noopener noreferrer">this repo</a></p>
       </div>
     </div>
   </body>
-  <script src="clock.js"></script>
+  <script>
+    fetch(
+      "https://api.github.com/repos/mattxwang/hmfdmoc/branches/main"
+    )
+      .then(response => {
+        response.json().then(json => {
+          console.log(json);
+          const date = Date(json.commit.commit.author.date);
+          console.log(date)
+          if (date) {
+            const dateStr = date.toString()
+            document.getElementById('date').innerHTML = dateStr
+          }
+
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  </script>
 </html>
