@@ -27,3 +27,8 @@ html {
 #date {
   font-weight: bold;
 }
+
+.text-content {
+  margin: auto;
+  max-width: 50rem;
+}
